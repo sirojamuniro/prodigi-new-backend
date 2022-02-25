@@ -46,7 +46,7 @@ class ViewProductController {
                 res.status(400).send({ status: "Error", errors: [{message: "User not found" }]  })
             }
             
-              await  ViewProduct.findAndCountAll({where:{user_id:user.id,role:'user'},
+              await  ViewProduct.findAndCountAll({where:{user_id:user.id},
 				include:[	{
                     model:Product,
      
@@ -60,18 +60,17 @@ class ViewProductController {
                 }).then(data => {
 
                     const resObj = data.rows.map(data => {
-                        const after_discount = discount.discount(data.product.price,data.product.discount)
+                      
                         return Object.assign(
                             {},
                             {	
                                 id:data.id,
                                 product_id:data.product.id,
-                                name:data.product.name,
-                                discount:Number(data.product.discount),
+                                name:data.product.name,                              
                                 type:data.product.type,
                                 brand:data.product.brand,
                                 price: Number(data.product.price),
-                                after_discount:after_discount
+                               
                             }
                         )
                     })
