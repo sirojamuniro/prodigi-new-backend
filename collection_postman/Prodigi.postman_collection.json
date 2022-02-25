@@ -2267,7 +2267,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Please check your email, to finish signing up for WinnGas\"\n}"
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Please check your email, to finish signing up for prodigi\"\n}"
 				}
 			]
 		},
