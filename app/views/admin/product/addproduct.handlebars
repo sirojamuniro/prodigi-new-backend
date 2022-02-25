@@ -1,0 +1,106 @@
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i>Add Product
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="input-group">
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <form action="/admin/input-product" method="post" enctype="multipart/form-data"> 
+           <div  class="col-sm-12 form-group">
+            <label for="name">Nama Produk</label>
+              <input class="form-control" id="name" name="name" type="text" required>
+            </div>
+             <div  class="col-sm-12 form-group">
+             <label for="name">Nama Brand</label>
+              <input class="form-control" id="brand" name="brand" type="text" required>
+            </div >
+             <div  class="col-sm-12 form-group">
+             <label for="name">Type</label>
+              <input class="form-control" id="type" name="type" type="text" required>
+            </div>      
+            <div class="col-sm-12 form-group">
+            <label for="price">Harga Produk (Rp)</label>
+              <input class="form-control" id="price" name="price"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" type="number" required>
+            </div>
+              <div class="col-sm-12 form-group">
+            <label for="discount">Diskon</label>
+              <input class="form-control" id="discount" name="discount"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" type="number">
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="description">Deskripsi Produk</label>
+              <input class="form-control" id="description" name="description" type="text" required>
+            </div>
+          
+                <div class="col-sm-12 form-group">
+            <label for="quantity">Stok Produk (quantity)</label>
+              <input class="form-control" id="quantity" name="quantity"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" type="number" required>
+            </div>
+        
+            <div class="col-sm-12 form-group">
+                <label for="image">Gambar 1</label>
+                   <input class="form-control" id="image" name="image" type="file" accept="image/*"  onchange="PreviewImage();" placeholder="Masukan Gambar">
+                    {{!-- <button class="btn btn-success add-button" type="button"><i class="fa fa-plus"></i></button> --}}
+            </div>
+              <div class="col-sm-12 form-group">
+                <label for="image">Gambar 2</label>
+                   <input class="form-control" id="image" name="image2" type="file" accept="image/*"  onchange="PreviewImage();" placeholder="Masukan Gambar">
+                    {{!-- <button class="btn btn-success add-button" type="button"><i class="fa fa-plus"></i></button> --}}
+            </div>
+              <div class="col-sm-12 form-group">
+                <label for="image">Gambar 3</label>
+                   <input class="form-control" id="image" name="image3" type="file" accept="image/*"  onchange="PreviewImage();" placeholder="Masukan Gambar">
+                    {{!-- <button class="btn btn-success add-button" type="button"><i class="fa fa-plus"></i></button> --}}
+            </div>
+          
+            
+      <br/>
+
+          <div class="">
+            <button class="btn btn-sm btn-primary" id="save" type="submit">
+            <i class="fa fa-dot-circle-o"></i> Simpan</button>
+            <button type="button" class="btn  btn-sm btn-primary" id="loadingbutton" disabled> <i class="fa fa-dot-circle-o"></i>  <span class="spinner-border spinner-border-sm"></span>Loading</button>
+        </div>
+         </form>
+    </div>
+   
+    
+</div>
+
+<script type="text/javascript">
+$('#loadingbutton').hide();
+$(function(){
+    $('form').submit(function(e){
+        e.preventDefault();
+        $('#loadingbutton').show();
+        $('#save').hide();
+        e.currentTarget.submit();
+    })
+});
+
+$(document).on('click', '.add-button', function() {
+        let inputHtml = '<div class="col-md-12 form-group" style="margin-bottom: 20px;">';
+
+        $(this).attr('class', 'btn btn-danger remove-button');
+
+        $(this).html('<i class="fa fa-trash"></i>');
+
+        inputHtml += '<input type="file" name="image[]" class="form-control" aria-describedby="add-button" required>';
+
+        inputHtml += '<button class="btn btn-success add-button" type="button"><i class="fa fa-plus"></i></button>';
+
+        inputHtml += '<br></div>';
+
+        $('.arrEmail').append(inputHtml);
+    });
+
+    $(document).on('click', '.remove-button', function() {
+        $(this).parent().remove();
+    });
+
+
+</script>

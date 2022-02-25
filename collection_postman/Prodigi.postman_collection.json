@@ -1,0 +1,3180 @@
+{
+	"info": {
+		"_postman_id": "00b7ff75-82d8-4ab3-aa7e-ee1eff78a473",
+		"name": "Prodigi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/profile",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-/tg5UuL62c0tp0uOAhikh5NEnjE\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3AGNxWZkV-4ECVuYaYjuWbu5OMDhhw22E7.iHBvmewnzFTwsqyMGwwB8H2mE52yE9EbNBAWKYTdVDM; Path=/; Expires=Thu, 12 Aug 2021 03:49:09 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Aug 2021 03:48:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"photo\": null,\n            \"title\": \"mr\",\n            \"place_dob\": null,\n            \"dob\": \"1998-09-08\",\n            \"name\": \"Joan\",\n            \"email\": \"munirosiroja@gmail.com\",\n            \"phone\": \"08123452267890\",\n            \"status\": \"waiting-confirmation\",\n            \"role\": \"user\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJpYXQiOjE2MjI3ODMyMDIsImV4cCI6MTYyMzM4ODAwMn0.6b7LJ5buaqCv-kZ5a-Phl4pcFouoDlm0f5atqmuGo5U",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/user/logout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJpYXQiOjE2MjI3ODMyMDIsImV4cCI6MTYyMzM4ODAwMn0.6b7LJ5buaqCv-kZ5a-Phl4pcFouoDlm0f5atqmuGo5U",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/v1/user/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-2FWvguta6h5unZbHqdGNZ4ipoM8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Aug 2021 03:48:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"errors\": [\n        {\n            \"message\": \"You have been logged out\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"phone\":\"12223123\"     \r\n}\r\n//description: phone,nik,dob,place_dob,name\r\n//harus delete // ini semua karena token dan jsonnya eror jika tidak hanya yang di dalam object saja yang dikirim "
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/update-profile?section=phone",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-profile"
+							],
+							"query": [
+								{
+									"key": "section",
+									"value": "phone"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n           \r\n         \r\n            \"phone\":\"12223123\"\r\n      \r\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/update-profile?section=phone",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update-profile"
+									],
+									"query": [
+										{
+											"key": "section",
+											"value": "phone"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-0u0jCXexlf057iKAQSEVEly8wqU\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3AVNUdVrpi92jkX1b9k_KD5ti2vkcFcOnM.B7kZLFWbr%2FboYs%2BsK%2FKtRgr%2BfBNdmdLOb745kLR9fdI; Path=/; Expires=Mon, 16 Aug 2021 09:52:35 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 16 Aug 2021 09:51:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Success update profile\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"12345678\",\n    \"new_password\": \"1234567\",\n    \"confirm_password\": \"1234567\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/change-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error if Not Have Value",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\": \"\",\n    \"new_password\": \"\",\n    \"confirm_password\": \"\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/user/change-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"change-password"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "169"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a9-v9Q58eai27Bo7MsmcnSnoZ3a67s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jun 2021 07:51:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"errors\": [\n        {\n            \"old_password\": \"Old Password is required\"\n        },\n        {\n            \"new_password\": \"New Password is required\"\n        },\n        {\n            \"confirm_password\": \"Confirm Password is required\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success change password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\": \"1234567\",\n    \"new_password\": \"1234567\",\n    \"confirm_password\": \"1234567\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/user/change-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-7vADmlFhvfqS6gOWfj+oS99aB3w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jun 2021 08:26:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Account password has been changed successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Input Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"Rumah \",\n    \"complete_address\": \"Jl. Jl\",\n    \"name\":\"sasageyo\",\n    \"phone\":\"2233212323\",\n    \"province\":1,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/addresses-input",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"addresses-input"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Input Address",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses-input",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses-input"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-LNf+n4eg0HC3tJTJS/hf13+6cD0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 03:24:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"New Address created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"name\":\"sasageyo\",\n    \"phone\":\"2233212323\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/addresses/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"addresses",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit Address",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-je6XI9bhQhqtgTEB+/vTnXmRAPg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 04:28:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Address updated successfully!\"\n}"
+						},
+						{
+							"name": "Edit Address",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses/11",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses",
+										"11"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-pKVusumsJaHBluCcDJsUSmg4a74\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3ALs0tETiNBZbeE2Y2-Qe_D1zCQ5ZUbDod.Xnx9YJ%2BmElDPMtAG0GS7b%2FGMRmGxfMcTL%2BolBNSeNiw; Path=/; Expires=Mon, 09 Aug 2021 04:30:17 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 04:29:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"message\": \"Wrong address user\"\n}"
+						},
+						{
+							"name": "Edit Address",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses",
+										"4"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-Vuq4o/IJlJ+7kdN8S18O5xeuf4I\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 04:29:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"message\": \"data address not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/addresses",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"addresses"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Address",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses-delete/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses-delete",
+										"2"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-Vuq4o/IJlJ+7kdN8S18O5xeuf4I\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 05:01:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"message\": \"data address not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/addresses-delete/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"addresses-delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Address",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses-delete/10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses-delete",
+										"10"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-TNleMcJPceU+x4a05ZY9IOSzVZo\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3ArvOzo-lNb1qk5nJ1Xue-99R-IvK-T21H.JU9OCXFZZJMTE4QQtqVJWdCX%2Bp0Sny6pPrTQ8GyLsd4; Path=/; Expires=Mon, 09 Aug 2021 10:32:52 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 10:31:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"errors\": [\n        {\n            \"message\": \"data address not found\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Delete Address",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiRnJFZjF5WnVROGRwS0pncGovaWZxTTZuN21kRzlVb3ZrRE1taFFjUjBkaz0iLCJzdGF0dXMiOiJhY3RpdmUiLCJpYXQiOjE2MjMxMzg1NjcsImV4cCI6MTYyMzc0MzM2N30.A_6jcAdEih_v72mbdBDdTmtVZ2Z5B34lXkFset_1GW8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"Rumahasdasd \",\n    \"complete_address\": \"asdasdasd\",\n    \"province\":2,\n    \"city\":1,\n    \"sub_district\": 1,\n    \"urban_village\": 1,\n    \"postal_code\": \"12345\",\n    \"map\": \"1234567\",\n    \"status\": \"main\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/addresses-delete/10",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"addresses-delete",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-ct3ZxGeoEEmVw2W8WwFpm0/OrWw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 10:32:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Address deleted successfully!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload Photo Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/xampp/htdocs/itachi test.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/upload-photo-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"upload-photo-profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Photo Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/xampp/htdocs/itachi test.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/change-upload-photo-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"change-upload-photo-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit Photo Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/E:/xampp/htdocs/itachi test.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/change-upload-photo-profile/user-profile-photo-1628504450655.jpeg",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"change-upload-photo-profile",
+										"user-profile-photo-1628504450655.jpeg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-o9DrTrfeclwH/0nQVNGafdyS4To\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 10:21:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Succes\",\n    \"message\": \"Succes change photo Profile\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Photo Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/E:/xampp/htdocs/itachi test.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/delete-upload-photo-profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"delete-upload-photo-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Photo Profile",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/E:/xampp/htdocs/itachi test.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/delete-upload-photo-profile/user-profile-photo-1628504893280.jpeg",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"delete-upload-photo-profile",
+										"user-profile-photo-1628504893280.jpeg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-ShfaAQ9NPlzz0ik1fs+TS3HD/TQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 09 Aug 2021 10:28:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Succes\",\n    \"message\": \"Succes delete photo profile\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Input Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\":1\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/wishlist-input",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"wishlist-input"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "If Product not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\":1\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/wishlist-input",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"wishlist-input"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-LYaThrWC+eHv7XXCXBOfgkAa1UI\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3AodXuUQWY_7zNthsguzppUpR07jHdZlp3.N%2FCFsqKH26tuztw8jnXNLTUoLH3nADNkq9JA0Qo97Cw; Path=/; Expires=Thu, 12 Aug 2021 02:38:36 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Aug 2021 02:37:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Error\",\n    \"errors\": [\n        {\n            \"message\": \"Product not found\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\":1\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/wishlist-input",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"wishlist-input"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-DJy1qUzm+F+7k2UpuJtNEaOQoiM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Aug 2021 04:26:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"created_at\": \"2021-08-12T04:26:32.482Z\",\n        \"id\": 2,\n        \"user_id\": 1,\n        \"product_id\": 1,\n        \"productId\": 1,\n        \"userId\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Wishlist",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\":1\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/wishlist",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"wishlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\":1\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/wishlist",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"wishlist"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "477"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1dd-1t1Iqp4KVYxXQM2tE1XPK7QPHgI\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3AXnvgrvJnsE4CHIEXyahzJlO2oUeW4KlO.2SvkcrZs9qflC35bQpcFR7y36Q531jR9YlD74nkLSmk; Path=/; Expires=Wed, 18 Aug 2021 08:29:53 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 18 Aug 2021 08:28:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"count\": 2,\n        \"rows\": [\n            {\n                \"id\": 3,\n                \"product_id\": 1,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"image\": \"product-image-1628850518082.jpg\",\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"product_code\": \"Blender\",\n                \"price\": 200002,\n                \"after_discount\": 195002\n            },\n            {\n                \"id\": 2,\n                \"product_id\": 3,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"image\": \"product-image-1628851122185.jpg\",\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"product_code\": \"kipas\",\n                \"price\": 200002,\n                \"after_discount\": 195002\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\":1\n   \n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/user/wishlist-delete/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"wishlist-delete",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "content-Type",
+										"value": "multipart/form-data",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product_id\":1\n   \n}"
+								},
+								"url": {
+									"raw": "{{url}}/api/v1/user/wishlist-delete/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"wishlist-delete",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-EFTfWDWX9b5LeVlvJDyibiBhvKM\""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3ALJeVP4Fhz-3xyWjFrdrkxeUmfOejiEyQ.KR%2Bslzgq5knvmqRCozSq0%2Bs921cwOFfF8UfBClcoq70; Path=/; Expires=Thu, 12 Aug 2021 04:36:48 GMT; HttpOnly"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Aug 2021 04:35:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success\",\n    \"data\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"jiji\",\n    \"title\": \"mr\",\n    \"dob\": \"1998-09-08\",\n    \"email\": \"email@domain.com\",\n    \"phone\": \"08123452267890\",\n    \"password\": \"1234567\",\n    \"confirm_password\": \"1234567\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/auth/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Empty Request Body",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "221"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"dd-OzL7Fxxf13/YKKwOB7/ZDkIm9wM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Jun 2021 08:22:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Error\",\n    \"errors\": [\n        {\n            \"name\": \"Invalid value\"\n        },\n        {\n            \"tile\": \"Invalid value\"\n        },\n        {\n            \"dob\": \"Invalid value\"\n        },\n        {\n            \"email\": \"Invalid value\"\n        },\n        {\n            \"phone\": \"Invalid value\"\n        },\n        {\n            \"password\": \"Invalid value\"\n        },\n        {\n            \"confirm_password\": \"Invalid value\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Succes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Joan\",\n    \"title\": \"mr\",\n    \"dob\": \"1998-09-08\",\n    \"email\": \"munirosiroja@gmail.com\",\n    \"phone\": \"08123452267890\",\n    \"password\": \"1234567\",\n    \"confirm_password\": \"1234567\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-fDSfbFXhhT2Up7tFIyX+knS6gIQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Aug 2021 02:34:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Please check your email, to finish signing up for WinnGas\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user@example.com\",\n    \"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"example@example.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "252"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"fc-llc0FGmul8ilKSiKHua2hf2GYuA\""
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "connect.sid=s%3Aa1Uf0VEQc_Jbd73PpUg-wnO5_qRCsWae.4VP%2FmMfJgbvFXfDDWp6ygygSUhvc5u%2B%2BPfLWYsHgIws; Path=/; Expires=Fri, 04 Jun 2021 02:38:04 GMT; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Jun 2021 02:37:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImVtYWlsIjoiZHZralpmZmtnUWlIZGJLTUlZRVlxSmtJUEYvRkFvZVBOZ2xWMUJDN3JZdz0iLCJpYXQiOjE2MjI3Njk2MDgsImV4cCI6MTYyMzM3NDQwOH0.GuXUsRUU0iRVzx_rqIxQ2EOwc2OyFCNTCfPCarjqEmk\"\n}"
+				},
+				{
+					"name": "If email not found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"munirosiroj@gmail.com\",\n    \"password\": \"1234567\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-5cWGwOfMmRnZgeusgWvzCaDCee0\""
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "connect.sid=s%3AoQjxC37cMnuRkESs-dYYdQkozkaehhZH.yQ%2F0MrTCVQpXyOvOmeldrV9l%2FzGHckX1%2BQdco%2BoNpEw; Path=/; Expires=Thu, 12 Aug 2021 03:08:18 GMT; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Aug 2021 03:07:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Error\",\n    \"errors\": [\n        {\n            \"email\": \"Email not found\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Wrong Password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"munirosiroja@gmail.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a-WUk/6ZkypH2U1K+zVHCBX4NLTzE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 12 Aug 2021 03:07:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Error\",\n    \"errors\": [\n        {\n            \"message\": \"Wrong Password\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "If not verify email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"email@domain.com\",\n    \"password\": \"12345678\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-2QeO7tEaeCGz6pee95kX+5SD8MQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 22 Sep 2021 11:07:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"token\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/product/product?start=0&limit=3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"product"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/product/product?start=0&limit=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"product"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "520"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"208-Lz2Q3ctqPaqIl0xrBumCRfqA4/A\""
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "connect.sid=s%3AAIP-P14CGRQnu6sbLvBOtnerASjt334j.j5ftKHmrIiXp4XeUHBTQLcm55dYvtCn8pdi1EnIJrRU; Path=/; Expires=Fri, 13 Aug 2021 08:16:43 GMT; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Aug 2021 08:15:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"count\": 3,\n        \"rows\": [\n            {\n                \"id\": 2,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"Blender\",\n                \"status_wishlist\": true,\n                \"image\": \"product-image-1628839176052.jpg\"\n            },\n            {\n                \"id\": 1,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"Blender\",\n                \"status_wishlist\": false,\n                \"image\": \"product-image-1628742385734.jpg\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Product All Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/product/product-detail?start=0&limit=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"product-detail"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/product/product-detail?start=0&limit=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"product-detail"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "637"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27d-0SuEtE2OdplBhFScoWv3HCN0WFQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Aug 2021 11:14:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"count\": 4,\n        \"rows\": [\n            {\n                \"id\": 4,\n                \"category\": \"Kipas\",\n                \"name\": \"W11192\",\n                \"price\": 2000332,\n                \"discount\": 2.5,\n                \"type_pressure\": null,\n                \"description\": \"Kipas teruji\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 1950324,\n                \"product_code\": \"Kipas\",\n                \"status_wishlist\": false,\n                \"image\": \"product-image-1629255192518.jpg\"\n            },\n            {\n                \"id\": 3,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"description\": \"kipasMantab\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"kipas\",\n                \"status_wishlist\": true,\n                \"image\": \"product-image-1628851122185.jpg\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Best Seller Product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/product/best-product?start=0&limit=2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"best-product"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/product/best-product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"best-product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1246"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4de-vqV6STWouOb+e824zigt6qr8eTA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Aug 2021 08:19:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"count\": 5,\n        \"rows\": [\n            {\n                \"id\": 3,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"description\": \"kipasMantab\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"kipas\",\n                \"status_wishlist\": true,\n                \"image\": \"product-image-1628851122185.jpg\"\n            },\n            {\n                \"id\": 2,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"description\": \"Blender Mantab\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"Blender\",\n                \"status_wishlist\": false,\n                \"image\": \"product-image-1628850520432.jpg\"\n            },\n            {\n                \"id\": 1,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"description\": \"Blender Mantab\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"Blender\",\n                \"status_wishlist\": true,\n                \"image\": \"product-image-1628850518082.jpg\"\n            },\n            {\n                \"id\": 4,\n                \"category\": \"Kipas\",\n                \"name\": \"W11192\",\n                \"price\": 2000332,\n                \"discount\": 2.5,\n                \"type_pressure\": null,\n                \"description\": \"Kipas teruji\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 1950324,\n                \"product_code\": \"Kipas\",\n                \"status_wishlist\": false,\n                \"image\": \"product-image-1629255192518.jpg\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Search Product price/discount/type/brand/name",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"search\":\"9\",\r\n    \"sort\":\"DESC\",\r\n    \"indicator\":\"name\"\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/product/product-max-min",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"product-max-min"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"r\",\r\n    \"sort\":\"ASC\",\r\n    \"indicator\":\"name\"\r\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/product/product-max-min",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"product-max-min"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "658"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"292-wiHHCvgsmvVNehmFenVK9+oM3qE\""
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "connect.sid=s%3ALx3n3Qj6Jlj8DvUTzq6WA667l_hdSx7_.LKMXHgnGvYhJYh8FaDeY3KiAg4r3TJO84R%2BBsZJTXq4; Path=/; Expires=Wed, 18 Aug 2021 04:38:16 GMT; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Aug 2021 04:37:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Success\",\n    \"data\": {\n        \"count\": 3,\n        \"rows\": [\n            {\n                \"id\": 1,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"description\": \"Blender Mantab\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"Blender\",\n                \"status_wishlist\": true,\n                \"image\": \"product-image-1628850518082.jpg\"\n            },\n            {\n                \"id\": 2,\n                \"category\": \"Regulator\",\n                \"name\": \"W11192\",\n                \"price\": 200002,\n                \"discount\": 2.5,\n                \"type_pressure\": \"Low Pressure\",\n                \"description\": \"Blender Mantab\",\n                \"dimension\": \"20-25 meter\",\n                \"weight\": 10,\n                \"stock\": 100,\n                \"after_discount\": 195002,\n                \"product_code\": \"Blender\",\n                \"status_wishlist\": false,\n                \"image\": \"product-image-1628850520432.jpg\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}

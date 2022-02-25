@@ -1,0 +1,87 @@
+<div class="card">
+    <div class="card-header" >
+        <i class="fa fa-align-justify"></i>List Product
+    </div>
+     {{#if messages.msg_info}}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-check"></i> Success!</h5>
+        {{messages.msg_info}}
+    </div>
+    {{/if}}
+    {{#if messages.msg_error}}
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        {{messages.msg_error}}
+    </div>
+    {{/if}}
+
+    <div class="card-body">
+          <a href="/admin/add-product" class="btn btn-primary" >Tambahkan Produk</a>
+                <br/>
+        <br/>
+        <br/>
+        <table class="table table-responsive-sm table-bordered data-table">
+            <colgroup>
+                <col span="1" style="width: 2%; height: 70px;">
+                <col span="1" style="width: 15%; height: 70px;">
+                <col span="1" style="width: 10%; height: 70px;">
+                <col span="1" style="width: 20%; height: 70px;">
+                <col span="1" style="width: 10%; height: 70px;">
+                <col span="1" style="width: 20%; height: 70px;">
+                <col span="1" style="width: 10%; height: 70px;">
+                <col span="1" style="width: 30%; height: 70px;">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Produk</th>
+                    <th>Brand</th>
+                    <th>Harga</th>
+                    <th>Diskon</th>
+                    <th>Deskripsi</th>
+                    <th>Jumlah</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+               <tbody>
+                {{#each list_product}}
+                <tr>
+                    <td>{{no}}</td>
+                    <td>{{name}}</td>
+                    <td>{{brand}}</td>
+                    <td>Rp {{formatCurrencyIDR price}}</td>
+                    <td>{{discount}}%</td>
+                    <td>{{description}}</td>
+                    <td>{{quantity}} pcs</td>
+                    <td>
+                        <form action="/admin/delete-product/{{id}}"  method="post">
+                        <a class="btn btn-secondary btn-sm" href="/admin/listproduct/{{id}}">
+                            <i class="fas fa-pencil-alt pr-1"></i>
+                            Edit
+                        </a>
+                        <button type="submit" onclick="return confirm('Apakah kamu yakin ingin delete produk?')" data-toggle="tooltip" data-original-title="Delete" class="delete btn btn-sm  btn-danger  deleteProduct"><i class="fa fa-trash"></i>Delete</a> &nbsp;
+                   </form>
+                   </td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+        <br/>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+$('#loadingbutton').hide();
+$('#save').click(function(){
+    $('#loadingbutton').show();
+    $('#save').hide();
+
+});
+
+
+</script>

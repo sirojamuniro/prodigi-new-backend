@@ -1,0 +1,58 @@
+<div class="card">
+    <div class="card-header" >
+        <i class="fa fa-align-justify"></i>List User
+    </div>
+
+
+    <div class="card-body">
+        <table class="table table-responsive-sm table-bordered data-table">
+            <colgroup>
+                <col span="1" style="width: 2%; height: 70px;">
+                <col span="1" style="width: 15%; height: 70px;">
+                <col span="1" style="width: 20%; height: 70px;">
+                <col span="1" style="width: 2%; height: 70px;">
+                <col span="1" style="width: 10%; height: 70px;">
+                <col span="1" style="width: 20%; height: 70px;">
+                <col span="1" style="width: 10%; height: 70px;">
+                <col span="1" style="width: 30%; height: 70px;">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Lengkap</th>
+                    <th>Email</th>
+                    <th>Title</th>
+                    <th>Phone</th>
+                    <th>Nik</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+               <tbody>
+                {{#each list_user}}
+                <tr>
+                    <td>{{no}}</td>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>{{title}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{nik}}</td>
+                    <td>{{status}}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/admin/listuser/{{id}}">
+                            <i class="fas fa-pencil-alt pr-1"></i>
+                            Show
+                        </a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+        <br/>
+
+    </div>
+</div>
+
+</script>

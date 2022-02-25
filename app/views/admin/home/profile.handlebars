@@ -1,0 +1,68 @@
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i>Profile
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="input-group">
+            </div>
+        </div>
+        </div>
+    </div>
+             {{#if messages.msg_info}}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-check"></i> Success!</h5>
+        {{messages.msg_info}}
+    </div>
+    {{/if}}
+    {{#if messages.msg_error}}
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        {{messages.msg_error}}
+    </div>
+    {{/if}}
+
+    <div class="card-body">
+     <a href="/admin/change-password-admin-view" class="btn btn-primary" >Ubah Password</a>
+       <br/>
+       <br/>
+       <form action="/admin/update-profile-admin/{{list_admin.id}}" method="post" >
+           <div class="col-sm-12 form-group">
+            <label for="id">Id</label>
+              <input class="form-control" id="id" name="id" type="text" value="{{list_admin.id}}" disabled >
+            </div>
+           <div class="col-sm-12 form-group">
+            <label for="id">Email</label>
+              <input class="form-control" id="id" name="id" type="text" value="{{list_admin.email}}" readonly >
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="name">Nama</label>
+              <input class="form-control" id="name" name="name" type="text" value="{{list_admin.name}}" >
+            </div>
+              <div class="col-sm-12 form-group">
+            <label for="name">Nomor Telepon</label>
+              <input class="form-control" id="phone" name="phone" type="number" value="{{list_admin.phone}}" >
+            </div>
+
+        <br/>
+
+        <div class="card-footer">
+          <button class="btn btn-sm btn-primary" id="save" type="submit">
+          <i class="fa fa-dot-circle-o"></i> Simpan</button>
+          <button type="button" class="btn btn-primary" id="loadingbutton" disabled>  <span class="spinner-border spinner-border-sm"></span>Loading</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+<script type="text/javascript">
+
+$('#loadingbutton').hide();
+$('#save').click(function(){
+    $('#loadingbutton').show();
+    $('#save').hide();
+
+});
+
+</script>

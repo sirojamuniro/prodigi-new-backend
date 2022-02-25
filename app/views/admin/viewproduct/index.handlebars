@@ -1,0 +1,71 @@
+<div class="card">
+    <div class="card-header" >
+        <i class="fa fa-align-justify"></i>List Product
+    </div>
+     {{#if messages.msg_info}}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-check"></i> Success!</h5>
+        {{messages.msg_info}}
+    </div>
+    {{/if}}
+    {{#if messages.msg_error}}
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        {{messages.msg_error}}
+    </div>
+    {{/if}}
+
+    <div class="card-body">
+         
+        <table class="table table-responsive-sm table-bordered data-table">
+            <colgroup>
+                <col span="1" style="width: 2%; height: 70px;">
+                <col span="1" style="width: 30%; height: 70px;">
+                <col span="1" style="width: 10%; height: 70px;">
+                <col span="1" style="width: 20%; height: 70px;">
+                <col span="1" style="width: 20%; height: 70px;">
+                <col span="1" style="width: 25%; height: 70px;">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Produk</th>
+                    <th>Brand</th>
+                    <th>Harga</th>
+                    <th>Type</th>
+                    <th>Jumlah View Product</th>
+                </tr>
+            </thead>
+               <tbody>
+                {{#each list_view_product}}
+                <tr>
+                    <td>{{no}}</td>
+                    <td>{{name}}</td>
+                    <td>{{brand}}</td>
+                    <td>Rp {{formatCurrencyIDR price}}</td>
+                    <td>{{type}}</td>
+                    <td>{{count}}</td>
+                    
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+        <br/>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+$('#loadingbutton').hide();
+$('#save').click(function(){
+    $('#loadingbutton').show();
+    $('#save').hide();
+
+});
+
+
+</script>

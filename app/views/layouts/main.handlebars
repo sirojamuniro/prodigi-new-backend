@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      height: 100vh;
+    }
+  </style>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/adminlte/plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="/adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+{{!-- select2 and multiple select  --}}
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- JQuery Script -->
+  <script src="/adminlte/plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="/adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- AdminLTE App -->
+  <script src="/adminlte/dist/js/adminlte.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- DataTables -->
+  <script src="/adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/adminlte/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/adminlte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+{{!-- select2 and multiple select  --}}
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <title>{{ title }} - PRODIGI</title>
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+  <!-- Site wrapper -->
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Left navbar links --> 
+      <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <div>
+       <a href="/admin/logout" style="color: red !important;">Logout</a>
+      </div>
+    </li>
+     
+  </ul>
+
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="/admin/index" class="brand-link">
+        <img src="/adminlte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">ADMIN  PRODIGI</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+          
+            <img src="/adminlte/dist/img/avatar5.png" class="img-circle elevation-3" alt="User Image">
+    
+          </div>
+          <div class="info my-auto">
+            <a href="/admin/profile-admin" class="d-block">{{ session.name }}</a>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+            <li class="nav-item">
+              <a href="/admin/index" class="nav-link {{ home_active }}">
+                <i class="nav-icon fas fa-home"></i>
+                <p>
+                  Home
+                </p>
+              </a>
+            </li>
+            {{!-- {{#checkAdminDepartmentAndPermitedDepartment session.permission.commission_name 'Jemaat'
+            session.permission.role_name}} --}}
+            <li class="nav-item">
+              <a href="/admin/profile-admin" class="nav-link {{ profile_active }}">
+                <i class="nav-icon far fa-id-card"></i>
+                <p>
+                  Profile
+                </p>
+              </a>
+            </li>
+             
+            <li class="nav-item">
+              <a href="/admin/listadmin" class="nav-link {{ manajemen_admin_active }}">
+                <i class="nav-icon far fa-id-card"></i>
+                <p>
+                  Admin
+                </p>
+              </a>
+            </li>
+         
+      
+            <li class="nav-item">
+              <a href="/admin/listuser" class="nav-link {{ manajemen_user_active }}">
+                <i class="nav-icon far fa-id-card"></i>
+                <p>
+                  User
+                </p>
+              </a>
+            </li>
+           
+            <li class="nav-item has-treeview {{ member_data_menu_open }}">
+              <a href="#" class="nav-link {{ member_data_active }}">
+                <i class="nav-icon fas fa-user-friends"></i>
+                <p>
+                  Manajemen Produk
+                  <i class="right fas fa-angle-right"></i>
+                </p>
+              </a>
+              
+              <ul class="pl-3 nav nav-treeview">
+          
+                 <li class="nav-item">
+                  <a href="/admin/listproduct" class="nav-link {{ list_product_active }}">
+                    <i class="fas fa-list nav-icon"></i>
+                    <p>Produk</p>
+                  </a>
+                </li>
+                  <li class="nav-item">
+                  <a href="/admin/listwishlist" class="nav-link {{ list_wishlist_active }}">
+                    <i class="fas fa-list nav-icon"></i>
+                    <p>Wishlist</p>
+                  </a>
+                </li>
+                 </li>
+                  <li class="nav-item">
+                  <a href="/admin/listviewproduct" class="nav-link {{ list_view_active }}">
+                    <i class="fas fa-list nav-icon"></i>
+                    <p>View Product</p>
+                  </a>
+                </li>
+                  
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+            
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">{{title}}</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        {{{ body }}}
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2022 PRODIGI </strong> All rights
+      reserved.
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+<script>
+  $(function () {
+    $(".data-table").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+
+
+</body>
+
+</html>

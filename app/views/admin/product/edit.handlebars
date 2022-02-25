@@ -1,0 +1,99 @@
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i>Edit Banner
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="input-group">
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+          <form action="/admin/update-product/{{list_product_id.id}}" method="post" enctype="multipart/form-data"> 
+            <div class="col-sm-12 form-group">
+            <label for="id">Id</label>
+              <input class="form-control" id="id" name="id" type="text" placeholder="{{list_product_id.id}}" readonly >
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="name">Nama Produk</label>
+              <input class="form-control" id="name" name="name" type="text" value="{{list_product_id.name}}" >
+            </div>
+             <div class="col-sm-12 form-group">
+              <label for="name">Nama Brand</label>
+              <input class="form-control" id="brand" name="brand" type="text" value="{{list_product_id.brand}}"  >
+            </div >
+             <div  class="col-sm-12 form-group">
+             <label for="name">Type</label>
+              <input class="form-control" id="type" name="type" type="text"  value="{{list_product_id.type}}">
+            </div>      
+              <div class="col-sm-12 form-group">
+            <label for="price">Harga (Rp)</label>
+              <input class="form-control" id="price" name="price" type="number"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" value="{{list_product_id.price}}" >
+            </div>
+              <div class="col-sm-12 form-group">
+            <label for="discount">Diskon % </label>
+              <input class="form-control" id="discount" name="discount" type="number"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" value="{{list_product_id.discount}}" >
+            </div>
+          
+              <div class="col-sm-12 form-group">
+            <label for="description">Deskripsi Produk</label>
+              <textarea class="form-control" id="description" name="description" type="text" >{{list_product_id.description}}</textarea>
+            </div>
+          
+              <div class="col-sm-12 form-group">
+            <label for="quantity">Stok Produk (quantity)</label>
+              <input class="form-control" id="quantity" name="quantity" type="number"  onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" value="{{list_product_id.quantity}}" >
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="image">Gambar</label>
+              </br>
+              <img id="uploadPreview" style="width:100%;max-width:400px" />
+              <img id="myImg" alt="image news" style="width:100%;max-width:400px" src="/uploads/product/{{list_product_id.image}}">
+              <input class="form-control" id="image" name="image" type="file" accept="image/*"  onchange="PreviewImage();" placeholder="Masukan Gambar">
+            </div>
+
+        <br/>
+
+        <div class="card-footer">
+          <button class="btn btn-sm btn-primary" id="save" type="submit">
+          <i class="fa fa-dot-circle-o"></i> Simpan</button>
+          <button type="button" class="btn btn-primary" id="loadingbutton" disabled>  <span class="spinner-border spinner-border-sm"></span>Loading</button>
+        </div>
+      
+    
+    </form>
+     </div>
+</div>
+
+<script type="text/javascript">
+
+
+
+function PreviewImage() {
+var oFReader = new FileReader();
+oFReader.readAsDataURL(document.getElementById("image").files[0]);
+oFReader.onload = function (oFREvent)
+ {
+    document.getElementById("uploadPreview").src = oFREvent.target.result;
+};
+};
+$('#uploadPreview').hide();
+$('#image').click(function(){
+    $('#uploadPreview').show();
+    $('#myImg').hide();
+})
+$('#loadingbutton').hide();
+$(function(){
+    $('form').submit(function(e){
+        e.preventDefault();
+        $('#loadingbutton').show();
+        $('#save').hide();
+        e.currentTarget.submit();
+    })
+});
+
+
+
+
+</script>

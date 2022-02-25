@@ -1,0 +1,80 @@
+<div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i>Add Admin
+      <div class="row">
+        <div class="col-sm-3">
+            <div class="input-group">
+            </div>
+        </div>
+        </div>
+    </div>
+             {{#if messages.msg_info}}
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-check"></i> Success!</h5>
+        {{messages.msg_info}}
+    </div>
+    {{/if}}
+    {{#if messages.msg_error}}
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <h5><i class="icon fas fa-ban"></i> Alert!</h5>
+        {{messages.msg_error}}
+    </div>
+    {{/if}}
+
+    <div class="card-body">
+          <form action="/admin/register-admin" method="post"  enctype="application/json"> 
+            <div class="col-sm-12 form-group">
+            <label for="name">Nama Admin</label>
+              <input class="form-control" id="name" name="name" type="text" >
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="email">Email</label>
+              <input class="form-control" id="email" name="email" type="email">
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="password">Password</label>
+              <input class="form-control" id="password" name="password" type="password">
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="confirm_password">Konfirmasi Password</label>
+              <input class="form-control" id="confirm_password" name="confirm_password" type="password">
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="phone">Nomor Telephone</label>
+              <input class="form-control" id="phone" name="phone" type="text" >
+            </div>
+            <div class="col-sm-12 form-group">
+            <label for="gender">Jenis Kelamin</label>
+               <select class="form-control" id="gender" name="gender" data-live-search="true">
+                  <option value="male">Laki-Laki</option>
+                  <option value="female">Perempuan</option>
+              </select>
+            </div>        
+            
+      <br/>
+
+     <div class="">
+            <button class="btn btn-sm btn-primary" id="save" type="submit">
+            <i class="fa fa-dot-circle-o"></i> Simpan</button>
+            <button type="button" class="btn  btn-sm btn-primary" id="loadingbutton" disabled> <i class="fa fa-dot-circle-o"></i>  <span class="spinner-border spinner-border-sm"></span>Loading</button>
+      </div>
+    </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+$('#loadingbutton').hide();
+$(function(){
+    $('form').submit(function(e){
+        e.preventDefault();
+        $('#loadingbutton').show();
+        $('#save').hide();
+        e.currentTarget.submit();
+    })
+});
+
+
+</script>
