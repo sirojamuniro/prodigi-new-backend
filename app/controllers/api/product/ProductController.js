@@ -9,7 +9,6 @@ const ImageProduct = Models.image_products;
 const Wishlist = Models.wishlists;
 const Op = Sequelize.Op;
 
-
 class ProductController {
 	static async getDetail(req, res) {
 		const {

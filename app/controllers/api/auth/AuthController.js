@@ -219,7 +219,8 @@ class AuthController {
 			token_onesignal: req.body.token_onesignal,
 			verification_code: verification_code,
 			role: role,
-			status: status
+			status: status,
+			email_verified_at: new Date(),
 		}
 
 		await Models.users.create(create)

@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
 			primaryKey: true,
 			autoIncrement: true
 		},
-		user_id: DataTypes.BIGINT,
-		product_id: DataTypes.BIGINT,
+		user_id: DataTypes.INTEGER,
+		product_id: DataTypes.INTEGER,
 		role:DataTypes.STRING,
 		created_at: {
 			type: DataTypes.DATE,

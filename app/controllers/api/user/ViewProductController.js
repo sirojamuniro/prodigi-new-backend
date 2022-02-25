@@ -1,39 +1,31 @@
 const Models = require('../../../../models');
 const Wislist = Models.wishlists
 const User = Models.users
-const Merchant = Models.merchants
 const Product = Models.products
-const discount = require('../../../helpers/api/discount');
-const Category = Models.category_products;
+const ViewProduct = Models.view_products;
 const {
 	Sequelize
 } = require('../../../../models');
 const Op = Sequelize.Op;
 
 
-class WislistController {
+class ViewProductController {
 	static async post(req, res) {
 		try {
             const user = await User.findOne({where:{email:req.user.email,role:'user'}})
             const product = await Product.findOne({where:{id:req.body.product_id}})
-            let checkWishlist = await Wislist.findAll({where:{product_id:req.body.product_id,user_id:user.id,role:'user'}})
+        
                 if(!user) {
                     res.status(400).send({ status: "Error", errors: [{message: "User not found" }]  })
                 }else if(!product){
                     res.status(400).send({ status: "Error", errors: [{message: "Product not found" }]  })
-                }else
-                if(checkWishlist.length > 0){
-                    throw ({
-                        message: 'This product is already on your wishlist'
-                     })
                 }
 
 			const post = {
 				user_id: user.id,
-                role:user.role,
 				product_id:req.body.product_id
 			}
-			await Wislist.create(post)
+			await ViewProduct.create(post)
 			.then((data) => {				
 				res.status(200).json({
 					message: 'Success',
@@ -45,9 +37,8 @@ class WislistController {
 			console.log(error);
 			res.status(400).send({ status: "Error", errors: [{message: error.message }]  })
 		}
-	}
-
-	static async getMyWishlist(req,res) {
+	} 
+	static async get(req,res) {
 		const {start, limit} = req.query;
 		try {
             const user = await User.findOne({where:{email:req.user.email}})
@@ -55,14 +46,11 @@ class WislistController {
                 res.status(400).send({ status: "Error", errors: [{message: "User not found" }]  })
             }
             
-              await  Wislist.findAndCountAll({where:{user_id:user.id,role:'user'},
+              await  ViewProduct.findAndCountAll({where:{user_id:user.id,role:'user'},
 				include:[	{
                     model:Product,
      
-                },
-                {
-                    model:User,
-                },            
+                },     
         
         ],
             order:[['id','DESC']],
@@ -101,33 +89,7 @@ class WislistController {
 			console.log(error);
 			res.status(400).send({  status: "Error", data: error.message })
 		}
-	}
-
-    static async delete(req, res) {
-        const id = req.params.id;
-		try {
-            const user = await User.findOne({where:{email:req.user.email}})
-            const product = await Product.findOne({where:{id:req.body.product_id}})
-                if(!user) {
-                    res.status(400).send({ status: "Error", errors: [{message: "User not found" }]  })
-                }else if(!product){
-                    res.status(400).send({ status: "Error", errors: [{message: "Product not found" }]  })
-                }
-
-			await Wislist.destroy({where:{product_id:req.body.product_id,user_id:user.id,role:'user'}})
-			.then((data) => {				
-				res.status(200).json({
-					message: 'Success',
-					data: data
-				});
-			});
-		}
-		catch (error) {
-			console.log(error);
-			res.status(400).send({ status: "Error", errors: [{message: error.message }]  })
-		}
-	}
-    	
+	}   	
 }
 
-module.exports = WislistController
+module.exports = ViewProductController

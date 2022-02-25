@@ -16,6 +16,7 @@ const AuthController = require('../../controllers/api/auth/AuthController');
 const ProfileController = require('../../controllers/api/user/ProfileController');
 const AddressController = require('../../controllers/api/user/AddressController');
 const WislistController = require('../../controllers/api/user/WishlistController');
+const ViewProductController = require('../../controllers/api/user/ViewProductController');
 
 //route
 router.get('/profile', header.json, header.auth, validate, ProfileController.profile);
@@ -36,5 +37,7 @@ router.get('/logout', header.json, header.auth, AuthController.logout);
 router.post('/wishlist-input', header.json, header.auth, user.checkUser, validate, WislistController.post);
 router.get('/wishlist', header.json, header.auth, user.checkUser, validate, WislistController.getMyWishlist);
 router.delete('/wishlist-delete/:id', header.json, header.auth,  user.checkUser,validate, WislistController.delete);
-router.delete('/wishlist-delete-all', header.json, header.auth,  user.checkUser,validate, WislistController.deleteAll);
+
+router.post('/viewproduct', header.json, header.auth, user.checkUser, validate, ViewProductController.post);
+router.get('/viewproduct', header.json, header.auth, user.checkUser, validate, ViewProductController.get);
 module.exports = router
